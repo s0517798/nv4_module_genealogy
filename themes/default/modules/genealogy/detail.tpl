@@ -9,16 +9,16 @@
     	</div>
     	<div class="buttom-giapha">
     		<ul class="list-genealogy clearfix">
-    			<li class="col-md-5 col-xs-12">
+    			<li class="col-md-4 col-xs-12">
     				<a href="{DETAIL.link_made_up}">Phả ký </a>
     			</li>
-    			<li class="col-md-5 col-xs-12">
+    			<li class="col-md-4 col-xs-12">
     				<a href="{DETAIL.link_family_tree}">Phả đồ</a>
     			</li>
-    			<li class="col-md-5 col-xs-12">
+    			<li class="col-md-4 col-xs-12">
     				<a href="{DETAIL.link_convention}">Tộc ước</a>
     			</li>
-    			<li class="col-md-5 col-xs-12">
+    			<li class="col-md-4 col-xs-12">
     				<a href="{DETAIL.link_collapse}">Hương Hoả</a>
     			</li>
     			<li class="col-md-4 col-xs-12">
@@ -47,7 +47,7 @@
     	</div>
 	</div>
 	<div id="banners">
-           <img src="//www.nguyenvan.vn/themes/default/images/genealogy/bg-genealogy.jpg">
+           <img src="/themes/default/images/genealogy/bg-genealogy.jpg">
     </div>
 </div>
 

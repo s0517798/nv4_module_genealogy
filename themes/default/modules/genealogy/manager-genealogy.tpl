@@ -189,13 +189,10 @@
 			</div>
 		</div>
 		<div class="dm_tabcontent" id="dm_tab_1_2" >
-			<link type="text/css" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/ui/jquery.ui.core.css" rel="stylesheet" />
-			<link type="text/css" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/ui/jquery.ui.theme.css" rel="stylesheet" />
-			<link type="text/css" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/ui/jquery.ui.dialog.css" rel="stylesheet" />
+			<link type="text/css" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+			<link type="text/css" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/jquery-ui/jquery-ui.theme.min.css" rel="stylesheet" />
 			<link type="text/css" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/jquery/jquery.treeview.css" rel="stylesheet" />
 			<script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/jquery/jquery.treeview.min.js"></script>
-			<script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/ui/jquery.ui.core.min.js"></script>
-			<script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/ui/jquery.ui.dialog.min.js"></script>
 			<script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/contextmenu/jquery.contextmenu.r2.js"></script>
 			<div id="module_show_list">
 			<center>
@@ -230,8 +227,10 @@
 				</div>
 				<!-- END: contextMenu -->
 			</div>
-			<div id="create_genealogy_users" style="overflow:auto;display:none;padding:10px;" title="Họ : Nguyễn Văn{PAGE_TITLE}">
+			<div id="create_genealogy_users" style="overflow:auto;padding:10px;" title="Họ : {PAGE_TITLE}">
 				<iframe id="modalIFrame" width="100%" height="100%" marginWidth="0" marginHeight="0" frameBorder="0" scrolling="auto"></iframe>
+			</div>
+			<div id="UserModal">
 			</div>
 			<script type="text/javascript">
 				//<![CDATA[
@@ -314,14 +313,6 @@
 			<script type="text/javascript">
 				//<![CDATA[
 				$(document).ready(function() {
-					
-					$("div#create_genealogy_users").dialog({
-						autoOpen : false,
-						width : 800,
-						height : 500,
-						modal : true,
-						position : "center"
-					}).dialog("open");
 					$("#modalIFrame").attr('src', nv_base_siteurl + 'index.php?' + nv_lang_variable + '=' + nv_lang_data + '&' + nv_name_variable + '=' + nv_module_name + '&' + nv_fc_variable + '=users&gid={DATA.id}&parentid=0');
 				});
 				//]]>

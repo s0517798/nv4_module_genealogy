@@ -2,17 +2,17 @@
 
 /**
  * @Project NUKEVIET 4.x
- * @Author webvang (hoang.nguyen@webvang.vn)
- * @Copyright (C) 2015 Webvang. All rights reserved
+ * @Author NV Holding (ceo@nvholding.vn)
+ * @Copyright (C) 2020 NV Holding. All rights reserved
  * @License GNU/GPL version 2 or any later version
- * @Createdate 11/10/2015 00:00
+ * @Createdate 01/01/2020 00:00
  */
 
 if( ! defined( 'NV_IS_MOD_GENEALOGY' ) ) die( 'Stop!!!' );
 if( ! defined( 'NV_MODULE_LOCATION' ) ){
 	$contents = '<p class="note_fam">' . $lang_module['note_location'] . '</p>';
 	include NV_ROOTDIR . '/includes/header.php';
-	echo nv_admin_theme( $contents );
+	echo nv_site_theme( $contents );
 	include NV_ROOTDIR . '/includes/footer.php';
 	die();
 	
@@ -186,7 +186,23 @@ if( empty( $contents ) )
 			$db->sqlreset()
 			->select( 'COUNT(*) ')
 			->from( NV_PREFIXLANG . '_' . $module_data . '_genealogy' )
-			->where( 'status= 1 AND inhome=1 AND cityid='. $rowscity["city_id"].'');
+			->where( 'status= 1');
+			$num_items = $db->query( $db->sql() )->fetchColumn();
+			$array_fampage[$city_i]['link']=NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=' . $module_info['alias']['location'] . '/' . $rowscity['alias'];
+			$array_fampage[$city_i]['title']=$rowscity['title'];
+			$array_fampage[$city_i]['number']=$num_items;
+		}
+	
+		
+		
+		$contents = call_user_func( $viewfam, $array_fampage, 0 , 0, '' );
+	}elseif( $viewfam == 'view_maplocation' ) // Xem theo địa điểm
+	{
+		foreach( $global_array_location_city as $city_i =>  $rowscity ){
+			$db->sqlreset()
+			->select( 'COUNT(*) ')
+			->from( NV_PREFIXLANG . '_' . $module_data . '_genealogy' )
+			->where( 'status= 1 ');
 			$num_items = $db->query( $db->sql() )->fetchColumn();
 			$array_fampage[$city_i]['link']=NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=' . $module_info['alias']['location'] . '/' . $rowscity['alias'];
 			$array_fampage[$city_i]['title']=$rowscity['title'];

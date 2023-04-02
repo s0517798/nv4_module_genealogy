@@ -2,10 +2,10 @@
 
 /**
  * @Project NUKEVIET 4.x
- * @Author webvang (hoang.nguyen@webvang.vn)
- * @Copyright (C) 2015 Webvang. All rights reserved
+ * @Author NV Holding (ceo@nvholding.vn)
+ * @Copyright (C) 2020 NV Holding. All rights reserved
  * @License GNU/GPL version 2 or any later version
- * @Createdate 11/10/2015 00:00
+ * @Createdate 01/01/2020 00:00
  */
 
 if( ! defined( 'NV_IS_MOD_GENEALOGY' ) ) die( 'Stop!!!' );
@@ -1000,22 +1000,22 @@ function manager_theme($news_contents, $list_users, $array_keyword, $content_com
         $xtpl->assign('FAMILY', $global_array_fam_i);
         $xtpl->parse('main.family');
     }
-
+	
     foreach ($global_array_location_city as $global_array_city_i)
 	{
-        $global_array_city_i['selected'] = ($global_array_city_i['city_id'] == $news_contents['cityid']) ? ' selected="selected"' : '';
+        $global_array_city_i['selected'] = ($global_array_city_i['provinceid'] == $news_contents['cityid']) ? ' selected="selected"' : '';
         $xtpl->assign('CITY', $global_array_city_i);
         $xtpl->parse('main.city');
     }
 	foreach ($global_array_location_district as $global_array_district_i)
 	{
-        $global_array_district_i['selected'] = ($global_array_district_i['district_id'] == $news_contents['districtid']) ? ' selected="selected"' : '';
+        $global_array_district_i['selected'] = ($global_array_district_i['districtid'] == $news_contents['districtid']) ? ' selected="selected"' : '';
         $xtpl->assign('DISTRICT', $global_array_district_i);
         $xtpl->parse('main.district');
     }
 	foreach ($global_array_location_ward as $global_array_ward_i)
 	{
-        $global_array_ward_i['selected'] = ($global_array_ward_i['ward_id'] == $news_contents['wardid']) ? ' selected="selected"' : '';
+        $global_array_ward_i['selected'] = ($global_array_ward_i['wardid'] == $news_contents['wardid']) ? ' selected="selected"' : '';
         $xtpl->assign('WARD', $global_array_ward_i);
         $xtpl->parse('main.ward');
     }
